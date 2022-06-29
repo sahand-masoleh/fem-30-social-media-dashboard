@@ -13,14 +13,19 @@
 
   <main class="main">
     <header class="header">
-      <h1 class="header__title">
-        Social Media Dashboard
-      </h1>
-      <h2 class="header__followers"> Total Followers: 23,004</h2>
+      <div class="header__title title">
+        <h1 class="title__main">
+          Social Media Dashboard
+        </h1>
+        <h2 class="title__total"> Total Followers: 23,004</h2>
+      </div>
       <hr class="header__divider">
       <div class="header__toggle toggle">
-        <label for="toggle" class="toggle__label">Dark Mode</label>
-        <input type="checkbox" id="toggle" class="toggle__input">
+        <p for="toggle-btn" class="toggle__label">Dark Mode</p>
+        <input type="checkbox" class="toggle__input">
+        <div class="toggle__button">
+          <div class="toggle__knob"></div>
+        </div>
       </div>
     </header>
 
@@ -122,6 +127,7 @@
       Mentor</a>.
     Coded by <a class="footer__link" href="#" target="_blank">Sahand Masoleh</a>.
   </footer>
+  <script src="./app.js"></script>
 </body>
 
 </html>

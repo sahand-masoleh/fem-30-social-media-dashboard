@@ -16,25 +16,91 @@
 	/* #### light-theme */
 	--lt-toggle: hsl(230, 22%, 74%);
 
-	/* ### neutral */
+	--gap-1: min(5vw, 1rem);
+	--gap-1-5: min(7vw, 1.5rem);
+	--gap-2: min(10vw, 2rem);
 
-	/* #### dark-theme */
-	--dt-very-dark-blue--bg: hsl(230, 17%, 14%);
-	--dt-very-dark-blue--top-bg-pattern: hsl(232, 19%, 15%);
-	--dt-dark-desaturated-blue--card-bg: hsl(228, 28%, 20%);
-	--dt-desaturated-blue--text: hsl(228, 34%, 66%);
-	--dt-white--text: hsl(0, 0%, 100%);
-
-	/* #### light-theme */
-	--lt-white--bg: hsl(0, 0%, 100%);
-	--lt-very-pale-blue--top-bg-pattern: hsl(225, 100%, 98%);
-	--lt-light-grayish-blue--card-bg: hsl(227, 47%, 96%);
-	--lt-dark-grayish-blue--text: hsl(228, 12%, 44%);
-	--lt-very-dark-blue--text: hsl(230, 17%, 14%);
+	--fs-xl: 2rem;
+	--fs-l: 1.5rem;
+	--fs-m: 0.9rem;
 }
 
 * {
 	margin: 0;
 	padding: 0;
 	font-family: "Inter", sans-serif;
+}
+
+body {
+	background-color: var(--body-color);
+	padding: var(--gap-1);
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap-1);
+}
+
+.title__main {
+	font-size: var(--fs-l);
+	color: var(--primary-text);
+}
+
+.title__total {
+	font-size: var(--fs-m);
+	color: var(--secondary-text);
+}
+
+.header__divider {
+	border: 1px solid var(--secondary-text);
+	border-right: none;
+	border-bottom: none;
+}
+
+.header__toggle.toggle {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.toggle__input {
+	position: absolute;
+	opacity: 0;
+	top: -100px;
+	left: -100px;
+}
+
+.toggle__button {
+	width: 5ch;
+	height: 2.5ch;
+	border-radius: 100px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.toggle__input:not(:checked) ~ .toggle__button {
+	background-color: var(--lt-toggle);
+	justify-content: flex-end;
+	color: white;
+}
+.toggle__input:checked ~ .toggle__button {
+	background-image: linear-gradient(
+		to right,
+		hsl(210, 78%, 56%),
+		hsl(146, 68%, 55%)
+	);
+	justify-content: flex-start;
+	color: var(--body-color);
+}
+
+.toggle__knob {
+	content: "";
+	height: calc(100% - 0.5ch);
+	margin: 0.25ch;
+	aspect-ratio: 1;
+	color: inherit;
+	background-color: currentcolor;
+	border-radius: 50%;
 }
