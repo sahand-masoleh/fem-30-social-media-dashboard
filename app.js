@@ -1,14 +1,14 @@
 const themes = {
 	light: {
-		bg: "#ffffff",
-		topBgPattern: "#f5f7ff",
+		bg: "#F8F9FE",
+		topBgPattern: "#F0F3FA",
 		cardBg: "#f0f2fa",
 		lightText: "#63687e",
 		darkText: "#1e202a",
 	},
 	dark: {
 		bg: "#1f2029",
-		topBgPattern: "#1f212e",
+		topBgPattern: "#252B43",
 		cardBg: "#252a41",
 		lightText: "#8b97c6",
 		darkText: "#ffffff",
@@ -36,6 +36,7 @@ function paint() {
 	body.style.setProperty("--body-color", themes[currentTheme].bg);
 	body.style.setProperty("--primary-text", themes[currentTheme].darkText);
 	body.style.setProperty("--secondary-text", themes[currentTheme].lightText);
+	body.style.setProperty("--card-bg", themes[currentTheme].topBgPattern);
 }
 
 toggle.checked = false;
