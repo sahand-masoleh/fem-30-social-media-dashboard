@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+$facebook: hsl(208, 92%, 53%);
+$twitter: hsl(203, 89%, 53%);
+$instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+$youtube: hsl(348, 97%, 39%);
+
+$lime-green: hsl(163, 72%, 41%);
+$bright-red: hsl(356, 69%, 56%);
+
+/* #### dark-theme */
+$dt-toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+
+/* #### light-theme */
+$lt-toggle: hsl(230, 22%, 74%);
+
+$gap-0-5: min(3vw, 0.5rem);
+$gap-1: min(5vw, 1rem);
+$gap-1-5: min(7vw, 1.5rem);
+$gap-2: min(10vw, 2rem);
+
+$fs-xxl: 3.6rem;
+$fs-xl: 2rem;
+$fs-l: 1.5rem;
+$fs-m: 0.9rem;
+$fs-s: 0.8rem;
+$fs-xs: 0.6rem;
+
+$fw-4: 400;
+$fw-7: 700;
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Inter", sans-serif;
+}
+
+body {
+	background-color: var(--body-color);
+	padding: $gap-1-5;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	gap: $gap-2;
+}
+
+.card {
+	background-color: var(--card-bg);
+	padding: $gap-1-5;
+	border-radius: 0.25rem;
+	display: flex;
+	flex-direction: column;
+	gap: $gap-1-5;
+	align-items: center;
+	position: relative;
+
+	&--stats::after {
+		position: absolute;
+		content: "";
+		width: 100%;
+		height: 0.25rem;
+		top: 0;
+		border-radius: inherit;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	&--stats[data-type="facebook"]::after {
+		background: $facebook;
+	}
+	&--stats[data-type="twitter"]::after {
+		background: $twitter;
+	}
+	&--stats[data-type="instagram"]::after {
+		background: $instagram;
+	}
+	&--stats[data-type="youtube"]::after {
+		background: $youtube;
+	}
+
+	&__platform {
+		display: flex;
+		gap: $gap-0-5;
+		align-items: center;
+	}
+
+	&__handle {
+		font-size: $fs-s;
+		color: var(--secondary-text);
+	}
+
+	&__num {
+		color: var(--primary-text);
+
+		&--stats {
+			font-size: $fs-xxl;
+			font-weight: $fw-7;
+			letter-spacing: -2px;
+		}
+		&--overview {
+			font-size: $fs-xl;
+			font-weight: $fw-7;
+		}
+	}
+
+	&__text {
+		font-size: $fs-s;
+		letter-spacing: 0.6ch;
+		color: var(--secondary-text);
+		margin-top: calc(-1 * $gap-1-5);
+		text-transform: uppercase;
+	}
+
+	&__change {
+		font-size: $fs-s;
+		font-weight: $fw-7;
+		display: flex;
+		gap: 0.5ch;
+		align-items: center;
+
+		&--up {
+			color: $lime-green;
+
+			&::before {
+				content: url(./images/icon-up.svg);
+				display: grid;
+			}
+		}
+
+		&--down {
+			color: $bright-red;
+
+			&::before {
+				content: url(./images/icon-down.svg);
+				display: grid;
+			}
+		}
+	}
+
+	&__row {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+	}
+
+	&__title {
+		font-size: $fs-m;
+		color: var(--secondary-text);
+	}
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	gap: $gap-1-5;
+
+	&__divider {
+		border: 1px solid var(--secondary-text);
+		border-right: none;
+		border-bottom: none;
+	}
+
+	&__toggle.toggle {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.title {
+	&__main {
+		font-size: $fs-l;
+		color: var(--primary-text);
+	}
+
+	&__total {
+		font-size: $fs-m;
+		color: var(--secondary-text);
+	}
+}
+
+.toggle {
+	&__label {
+		font-size: $fs-m;
+		font-weight: $fw-7;
+		color: var(--secondary-text);
+	}
+
+	&__input {
+		position: absolute;
+		opacity: 0;
+		top: -100px;
+		left: -100px;
+	}
+
+	&__button {
+		width: 5ch;
+		height: 2.5ch;
+		border-radius: 100px;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	&__input:not(:checked) ~ &__button {
+		background-color: $lt-toggle;
+		justify-content: flex-end;
+		color: white;
+	}
+	&__input:checked ~ &__button {
+		background-image: $dt-toggle;
+		justify-content: flex-start;
+		color: var(--body-color);
+	}
+
+	&__knob {
+		content: "";
+		height: calc(100% - 0.5ch);
+		margin: 0.25ch;
+		aspect-ratio: 1;
+		color: inherit;
+		background-color: currentcolor;
+		border-radius: 50%;
+	}
+}
+
+.stats {
+	display: flex;
+	flex-direction: column;
+	gap: $gap-1-5;
+}
+
+.overview {
+	display: flex;
+	flex-direction: column;
+	gap: $gap-1;
+
+	.overview__title {
+		color: var(--secondary-text);
+	}
+}
+
+.footer {
+	font-size: $fs-xs;
+	width: 100%;
+	text-align: center;
+	margin: 2ch auto;
+	color: var(--secondary-text);
+
+	&__link {
+		color: var(--primary-text);
+	}
+}
