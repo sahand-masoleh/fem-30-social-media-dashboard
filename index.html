@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+</head>
+
+<body>
+
+  <main class="main">
+    <header class="header">
+      <h1 class="header__title">
+        Social Media Dashboard
+      </h1>
+      <h2 class="header__followers"> Total Followers: 23,004</h2>
+      <hr class="header__divider">
+      <div class="header__toggle toggle">
+        <label for="toggle" class="toggle__label">Dark Mode</label>
+        <input type="checkbox" id="toggle" class="toggle__input">
+      </div>
+    </header>
+
+    <section class="stats">
+      <div class="card card--stats">
+        <div class="card__platform">
+          <img src="./images/icon-facebook.svg" alt="facebook icon" class="card__icon">
+          <h3 class="card__handle">@nathanf</h3>
+        </div>
+        <p class="card__num card__num--stats">1987</p>
+        <p class="card__text card__text--stats">12 Today</p>
+        <p class="card__change card__change--stats card__change--up">Followers</p>
+      </div>
+      <div class="card card--stats">
+        <div class="card__platform">
+          <img src="./images/icon-twitter.svg" alt="twitter icon" class="card__icon">
+          <h3 class="card__handle">@nathanf</h3>
+        </div>
+        <p class="card__num card__num--stats">1044</p>
+        <p class="card__text card__text--stats">99 Today</p>
+        <p class="card__change card__change--stats card__change--up">Followers</p>
+      </div>
+      <div class="card card--stats">
+        <div class="card__platform">
+          <img src="./images/icon-instagram.svg" alt="instagram icon" class="card__icon">
+          <h3 class="card__handle">@realnathanf</h3>
+        </div>
+        <p class="card__num card__num--stats">11k</p>
+        <p class="card__text card__text--stats">1099 Today</p>
+        <p class="card__change card__change--stats card__change--up">Followers</p>
+      </div>
+      <div class="card card--stats">
+        <div class="card__platform">
+          <img src="./images/icon-youtube.svg" alt="youtube icon" class="card__icon">
+          <h3 class="card__handle">Nathan F.</h3>
+        </div>
+        <p class="card__num card__num--stats">8239</p>
+        <p class="card__text card__text--stats">144 Today</p>
+        <p class="card__change card__change--stats card__change--down">Subscribers</p>
+      </div>
+    </section>
+
+    <section class="overview">
+      <h2 class="overview__title">Overview - Today</h2>
+
+      <div class="card card--overview">
+        <h3 class="card__title">Page Views</h3>
+        <img src="./images/icon-facebook.svg" alt="" class="card__icon">
+        <card__num class="card__num--overview">87</card__num>
+        <p class="card__change card__change--overview card__change--up">3%</p>
+      </div>
+      <div class="card card--overview">
+        <h3 class="card__title">Likes</h3>
+        <img src="./images/icon-facebook.svg" alt="" class="card__icon">
+        <card__num class="card__num--overview">52</card__num>
+        <p class="card__change card__change--overview card__change--down">2%</p>
+      </div>
+      <div class="card card--overview">
+        <h3 class="card__title">Likes</h3>
+        <img src="./images/icon-instagram.svg" alt="" class="card__icon">
+        <card__num class="card__num--overview">5462</card__num>
+        <p class="card__change card__change--overview card__change--up">2257%</p>
+      </div>
+      <div class="card card--overview">
+        <h3 class="card__title">Profile Views</h3>
+        <img src="./images/icon-instagram.svg" alt="" class="card__icon">
+        <card__num class="card__num--overview">52k</card__num>
+        <p class="card__change card__change--overview card__change--up">1375%</p>
+      </div>
+      <div class="card card--overview">
+        <h3 class="card__title">Retweets</h3>
+        <img src="./images/icon-twitter.svg" alt="" class="card__icon">
+        <card__num class="card__num--overview">117</card__num>
+        <p class="card__change card__change--overview card__change--up">303%</p>
+      </div>
+      <div class="card card--overview">
+        <h3 class="card__title">Likes</h3>
+        <img src="./images/icon-twitter.svg" alt="" class="card__icon">
+        <card__num class="card__num--overview">507</card__num>
+        <p class="card__change card__change--overview card__change--up">553%</p>
+      </div>
+      <div class="card card--overview">
+        <h3 class="card__title">Likes</h3>
+        <img src="./images/icon-youtube.svg" alt="" class="card__icon">
+        <card__num class="card__num--overview">107</card__num>
+        <p class="card__change card__change--overview card__change--down">19%</p>
+      </div>
+      <div class="card card--overview">
+        <h3 class="card__title">Total Views</h3>
+        <img src="./images/icon-youtube.svg" alt="" class="card__icon">
+        <card__num class="card__num--overview">1407</card__num>
+        <p class="card__change card__change--overview card__change--down">12%</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Challenge by <a class="footer__link" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend
+      Mentor</a>.
+    Coded by <a class="footer__link" href="#" target="_blank">Sahand Masoleh</a>.
+  </footer>
+</body>
+
+</html>
