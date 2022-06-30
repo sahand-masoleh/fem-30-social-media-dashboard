@@ -15,14 +15,24 @@ const themes = {
 	},
 };
 
+const body = document.querySelector("body");
 let currentTheme = "light";
+
 const toggle = document.querySelector(".toggle__input");
 const toggleBtn = document.querySelector(".toggle__button");
 toggle.addEventListener("click", handleSwitchTheme);
 
-function handleSwitchTheme(event) {
-	const { checked } = event.target;
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+	toggle.click();
+} else {
+	paint();
+}
+
+function handleSwitchTheme() {
+	const { checked } = toggle;
 	currentTheme = checked ? "dark" : "light";
+	localStorage.setItem("theme", currentTheme);
 	paint();
 }
 
@@ -31,13 +41,9 @@ function handleToggle() {
 	toggle.click();
 }
 
-const body = document.querySelector("body");
 function paint() {
 	body.style.setProperty("--body-color", themes[currentTheme].bg);
 	body.style.setProperty("--primary-text", themes[currentTheme].darkText);
 	body.style.setProperty("--secondary-text", themes[currentTheme].lightText);
 	body.style.setProperty("--card-bg", themes[currentTheme].topBgPattern);
 }
-
-toggle.checked = false;
-paint();
