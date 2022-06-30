@@ -9,13 +9,24 @@
 
 body {
   background-color: var(--body-color);
-  padding: min(7vw, 1.5rem);
+  display: grid;
+  min-height: 100vh;
+  padding: 0 min(7vw, 1.5rem);
+  grid-template-rows: 1fr auto;
 }
 
 main {
   display: flex;
   flex-direction: column;
   gap: min(10vw, 2rem);
+  margin: min(10vw, 2rem) auto;
+  width: 100%;
+}
+@media screen and (min-width: 640px) {
+  main {
+    max-width: 70rem;
+    gap: min(15vw, 3rem);
+  }
 }
 
 .card {
@@ -114,20 +125,45 @@ main {
   flex-direction: column;
   gap: min(7vw, 1.5rem);
 }
+@media screen and (min-width: 640px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 .header__divider {
   border: 1px solid var(--secondary-text);
   border-right: none;
   border-bottom: none;
 }
+@media screen and (min-width: 640px) {
+  .header__divider {
+    display: none;
+  }
+}
 .header__toggle.toggle {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: min(5vw, 1rem);
+}
+@media screen and (min-width: 640px) {
+  .header__toggle.toggle {
+    width: unset;
+  }
 }
 
 .title__main {
   font-size: 1.5rem;
   color: var(--primary-text);
+  margin-bottom: 0.25ch;
+}
+@media screen and (min-width: 640px) {
+  .title__main {
+    font-size: 2rem;
+  }
 }
 .title__total {
   font-size: 0.9rem;
@@ -178,21 +214,40 @@ main {
   flex-direction: column;
   gap: min(7vw, 1.5rem);
 }
+@media screen and (min-width: 640px) {
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
+    gap: min(10vw, 2rem);
+  }
+}
 
 .overview {
   display: flex;
   flex-direction: column;
   gap: min(5vw, 1rem);
 }
+@media screen and (min-width: 640px) {
+  .overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr)) [last];
+    gap: min(10vw, 2rem);
+  }
+}
 .overview .overview__title {
   color: var(--secondary-text);
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 640px) {
+  .overview .overview__title {
+    grid-column: 1/last;
+  }
 }
 
 .footer {
   font-size: 0.6rem;
   width: 100%;
   text-align: center;
-  margin: 2ch auto;
   color: var(--secondary-text);
 }
 .footer__link {
