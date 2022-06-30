@@ -193,6 +193,19 @@ main {
 			width: unset;
 		}
 	}
+
+	&::before {
+		position: absolute;
+		content: "";
+		width: 100%;
+		height: 15rem;
+		top: 0;
+		left: 0;
+		background-color: var(--top-bg-pattern);
+		border-bottom-right-radius: 2rem;
+		border-bottom-left-radius: 2rem;
+		z-index: -1;
+	}
 }
 
 .title {
